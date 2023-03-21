@@ -7,6 +7,19 @@ export const useData = defineStore('Data', () => {
     const location = ref({})
     let search = ref('')
     const Zip = ref([])
+    const params = ref([])
+
+    const setParams = (key, value) => {
+        params.value.push({
+            title: key,
+            value
+        })
+
+    }
+
+    const gParams = computed((v) => {
+        return params.value
+    })
 
     let active = ref(false)
 
@@ -37,6 +50,17 @@ export const useData = defineStore('Data', () => {
         })
     }
 
+    const loadParams = () => {
+        let uri = window.location.search.substring(1);
+        let par = new URLSearchParams(uri);
+        par.forEach((p, k) => {
+            setParams(k, p);
+        })
+
+        //console.log(gParams);
+
+    }
+
     const FindData = () => {
 
         const options = {
@@ -59,6 +83,6 @@ export const useData = defineStore('Data', () => {
 
     }
 
-    return { gLocation, loadLocaction, search, FindData, active, gZip }
+    return { gLocation, loadLocaction, search, FindData, active, gZip, loadParams, gParams }
 
 })

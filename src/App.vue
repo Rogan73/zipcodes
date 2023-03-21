@@ -22,7 +22,18 @@
       <tEdit title="City" :value="Data.gLocation.city"/>
       <tEdit title="ISP" :value="Data.gLocation.isp"/>
       
-      <a class="btn btn-warning" :href=" `https://www.google.com/maps/search/?api=1&query=${Data.gLocation.lat},${Data.gLocation.lon}`" target="_blank">Google maps</a>
+      
+      <a class="btn btn-warning btn-sm" :href=" `https://www.google.com/maps/search/?api=1&query=${Data.gLocation.lat},${Data.gLocation.lon}`" target="_blank">Google maps</a>
+
+      <p  class="text-sm" > tags: 
+      <span
+      v-for="item, i in Data.gParams"
+      :key="i"
+      >
+      
+      {{ `${item.title}=${item.value}  ` }}
+    </span>    
+  </p>
     </section>
 
     <section class="zipcode">
@@ -46,6 +57,7 @@ const Data=useData()
 onMounted( ()=>{
 
   Data.loadLocaction();
+  Data.loadParams()
 
 })
 
