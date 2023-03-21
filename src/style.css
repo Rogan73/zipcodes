@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;600;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+    margin: 0;
+    padding: 5vh 10vw;
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.main_panel {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 90vh;
+    align-items: center;
+    width: 80vw;
+    /* background-color: transparent;*/
+    background-color: rgba(255, 255, 255, 0.06);
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid lightgray;
+    backdrop-filter: blur(10px);
+    color: black;
+    padding: 10px;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+@media (max-device-width: 480px) and (orientation: portrait) {
+    .main_panel {
+        width: unset;
+        border: unset;
+        height: 100vh;
+    }
+    body {
+        padding: 0;
+    }
+}
+
+.active {
+    opacity: 1;
+}
+
+.btn-grad {
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: .5s;
+    background-size: 200% auto;
+    color: #fff;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+    cursor: pointer;
+}
+
+.btn-grad:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-bk {
+    background-image: linear-gradient(to right, #FF512F 0%, #DD2476 51%, #FF512F 100%);
+}
+
+.glass-button {
+    background: linear-gradient(45deg, #3bade3 0%, #576fe6 25%, #9844b7 51%, #ff357f 100%);
+}
+
+.glass-panel {
+    color: #fff;
+    margin: 40px auto;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.c1 {
+    position: absolute;
+    left: -150px;
+    top: -150px;
+    width: 550px
+}
+
+.c2 {
+    position: absolute;
+    right: -150px;
+    bottom: -250px;
+    width: 800px
+}
