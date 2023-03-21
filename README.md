@@ -3,7 +3,7 @@
 Example  to use ZIP code for search location
 
 ## Test Link
-Important http:   no https:
+Important HTTP:  but not HTTPS:
 http://rikosoft.com/zipcodes/?utm1=125&utm2=568
 
 ## Screenshots
